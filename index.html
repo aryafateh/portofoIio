@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 1. Menu Navigasi */
+        nav {
+            background: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 10%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #2563eb;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #4b5563;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #2563eb;
+        }
+
+        /* 2. Judul Kiri, Gambar Kanan (Hero Section) */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 10%;
+            background: #fff;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #1f2937;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-image img {
+            width: 90%;
+            max-width: 450px;
+            border-radius: 30px;
+            box-shadow: 20px 20px 0px #2563eb;
+        }
+
+        /* 3. Biodata (6 Box) */
+        .section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            color: #1f2937;
+        }
+
+        .bio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .bio-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+
+        .bio-box:hover {
+            transform: translateY(-10px);
+            border-color: #2563eb;
+        }
+
+        .bio-box h3 {
+            color: #2563eb;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .bio-box p {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #374151;
+        }
+
+        /* 4 & 5. Portfolio dengan HTML Table */
+        .portfolio-container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            text-align: left;
+            padding: 18px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        table th {
+            background-color: #2563eb;
+            color: white;
+            font-weight: 600;
+        }
+
+        table tr:hover {
+            background-color: #f9fafb;
+        }
+
+        /* Responsif untuk HP */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-image {
+                margin-top: 50px;
+                justify-content: center;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">PORTFOLIO</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Works</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1>Halo, Nama Arya <br></h1>
+            <p>seorang siswa sataqu yang sedang mempelajari dunia web development.
+            </p>
+            <a href="#portfolio" style="background: #2563eb; color: white; padding: 12px 30px; text-decoration: none; border-radius: 8px; font-weight: 600;">Lihat Project</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Developer Image">
+        </div>
+    </header>
+
+    <section class="section" id="about">
+        <h2 class="section-title">Biodata Pribadi</h2>
+        <div class="bio-grid">
+            <div class="bio-box"><h3>Nama Lengkap</h3><p>Muhammad Arya Fateh al baqqiy</p></div>
+            <div class="bio-box"><h3>Profesi</h3><p>Peajar Web Developer</p></div>
+            <div class="bio-box"><h3>Lokasi</h3><p>Majalengka, Indonesia</p></div>
+            <div class="bio-box"><h3>Spesialisasi</h3><p>Frontend & Firebase</p></div>
+            <div class="bio-box"><h3>Bahasa</h3><p>Indonesia</p></div>
+            <div class="bio-box"><h3>Status</h3><p>Siswa Sataqu</p></div>
+        </div>
+    </section>
+
+    <section class="section" id="portfolio">
+        <h2 class="section-title">Project Portfolio</h2>
+        <div class="portfolio-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Project Name</th>
+                        <th>Category</th>
+                        <th>Tech Stack</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01</td>
+                        <td>E-Commerce Shinrai</td>
+                        <td>Web App</td>
+                        <td>HTML, CSS, JS</td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>Landing Page Ayam Bakar</td>
+                        <td>Landing Page</td>
+                        <td>HTML, CSS</td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td>Inventory Prediction System</td>
+                        <td>Management</td>
+                        <td>Firebase, JS</td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td>Personal Portfolio</td>
+                        <td>Personal</td>
+                        <td>HTML, CSS</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</body>
+</html>
