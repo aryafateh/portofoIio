@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <!-- Baris ini WAJIB agar website responsif di HP -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Portofolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #1f2937;
+            --light: #f9fafb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        
+        body { background-color: var(--light); color: var(--dark); overflow-x: hidden; }
+
+        /* 1. Navbar Responsif */
+        nav {
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        nav .logo { font-weight: 700; font-size: 1.4rem; color: var(--primary); }
+
+        nav ul { display: flex; list-style: none; }
+
+        nav ul li { margin-left: 20px; }
+
+        nav ul li a { text-decoration: none; color: var(--dark); font-weight: 500; font-size: 0.9rem; }
+
+        /* 2. Hero Section: Desktop (Kiri-Kanan), Mobile (Atas-Bawah) */
+        .hero {
+            display: flex;
+            flex-wrap: wrap; /* Memungkinkan elemen turun ke bawah saat sempit */
+            align-items: center;
+            padding: 60px 5%;
+            background: white;
+            gap: 40px;
+        }
+
+        .hero-text { flex: 1; min-width: 300px; }
+
+        .hero-text h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; margin-bottom: 20px; }
+
+        .hero-image { flex: 1; min-width: 300px; text-align: center; }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 15px 15px 0px #7d797f;;
+        }
+
+        /* 3. Biodata Grid (Responsive 6 Box) */
+        .container { padding: 60px 5%; }
+
+        .title { text-align: center; margin-bottom: 40px; font-size: 1.8rem; }
+
+        .grid-6 {
+            display: grid;
+            /* Grid otomatis menyesuaikan kolom berdasarkan lebar layar */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            border: 1px solid #edf2f7;
+            transition: 0.3s;\
+        }
+
+        .box:hover { transform: translateY(-5px); border-color: var(--primary); }
+
+        .box span { color: var(--primary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+
+        .box p { font-size: 1.1rem; font-weight: 600; margin-top: 5px; }
+
+        /* 4 & 5. Table Portofolio (Scrollable di Mobile) */
+        .table-wrapper {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            overflow-x: auto; /* Agar tabel bisa digeser kiri-kanan di layar kecil */
+        }
+
+        table { width: 100%; border-collapse: collapse; min-width: 500px; }
+
+        th { background: var(--primary); color: white; text-align: left; padding: 12px; }
+
+        td { padding: 12px; border-bottom: 1px solid #eee; }
+
+        /* BREAKPOINTS RESPONSIVE */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 10px; }
+            nav ul li { margin: 0 10px; }
+            .hero { text-align: center; }
+            .hero-image { order: -1; } /* Gambar muncul di atas judul pada HP */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Arya Web</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#bio">About</a></li>
+            <li><a href="#portofolio">Projects</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h1>My Portofolio</h1>
+            <p>Ini merupakan portofoio yang saya buat untuk memenuhi tugas sekolah, semoga bisa menjadi nilai yang baik untuk saya. Terima kasih sudah berkunjung ke website saya, semoga bermanfaat dan bisa menjadi inspirasi untuk teman-teman semua.
+    
+            </p>
+        </div>
+        <div class="hero-image">
+            <img src="data:image/jpeg;base64,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" alt="Web Development">
+        </div>
+    </section>
+
+    <section class="container" id="bio">
+        <h2 class="title">Biodata Pribadi</h2>
+        <div class="grid-6">
+            <div class="box"><span>Nama</span><p>Arya Fateh Al Baqqiy </p></div>
+            <div class="box"><span>Domisili</span><p>Majalengka, ID</p></div>
+            <div class="box"><span>Tools</span><p>Firebase & Git</p></div>
+            <div class="box"><span>Pendidikan</span><p>Siswa SMP</p></div>
+            <div class="box"><span>Kontak</span><p>WhatsApp Online</p></div>
+        </div>
+    </section>
+
+    <section class="container" id="portofolio">
+        <h2 class="title">Tabel Portofolio</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Project</th>
+                        <th>Kategori</th>
+                        <th>Tahun</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>E-Commerce Shinrai</td><td>Supplier Plastik</td><td>2026</td></tr>
+                    <tr><td>2</td><td>Ayam Bakar Landing Page</td><td>Kuliner</td><td>2026</td></tr>
+                    <tr><td>3</td><td>Tabungan Prediksi</td><td>Tabungan</td><td>2026</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</body>
+</html>
