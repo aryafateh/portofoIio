@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Biodata Saya</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+
+        /* Section 1: Menu */
+        .menu-section {
+            background-color: #2c3e50;
+            padding: 15px 0;
+
+        }
+        .menu-table {
+            width: 100%;
+            text-align: center;
+
+        }
+
+        .navbar-brand {
+            padding-right: 20px;
+        }
+
+        .navbar-toggler{
+        border-color: #3498db;
+        }
+
+        .navbar-toggler-icon{
+         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(52, 152, 219, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .nav-item-1 {
+        width: 100px;
+        height: 35px;
+        padding: auto;
+        size: 16px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 30px;
+
+        border: 2px solid #0d6efd;
+        background: transparent;
+        color: white;
+
+        font-weight: bold;
+        border-radius: 8px;
+
+        transition: 0.3s;
+        }
+
+        .nav-item-1:hover {
+                background: #0d6efd;
+        box-shadow: 0 0 15px rgba(13,110,253,0.6);
+        }
+
+        .nav-item-2 {
+        width: 100px;
+        height: 35px;
+        padding: auto;
+        size: 16px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 30px;
+
+        border: 2px solid #0d6efd;
+        background: transparent;
+        color: white;
+
+        font-weight: bold;
+        border-radius: 8px;
+
+        transition: 0.3s;
+        }
+
+        .nav-item-2:hover {
+                background: #0d6efd;
+        box-shadow: 0 0 15px rgba(13,110,253,0.6);
+        }
+
+        .nav-item-3 {
+        width: 100px;
+        height: 35px;
+        padding: auto;
+        size: 16px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 30px;
+
+        border: 2px solid #0d6efd;
+        background: transparent;
+        color: white;
+
+        font-weight: bold;
+        border-radius: 8px;
+
+        transition: 0.3s;
+        }
+
+        .nav-item-3:hover {
+                background: #0d6efd;
+        box-shadow: 0 0 15px rgba(13,110,253,0.6);
+        }
+
+        .menu-table a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            display: inline-block;
+
+        }
+        .menu-table a:hover {
+            background-color: #34495e;
+            border-radius: 5px;
+        }
+
+        /* Section 2: Judul & Gambar */
+        .hero-section {
+            padding: 60px 40px;
+            background: linear-gradient(135deg, #ecf0f1 0%, #d6dbdf 100%);
+        }
+        .hero-title {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin: 0;
+        }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Section 3: Biodata 6 Box */
+        .biodata-section {
+            padding: 40px;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            color: #2c3e50;
+        }
+        .bio-box {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .bio-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .bio-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .bio-label {
+            font-weight: bold;
+            color: #3498db;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Section 4: Portofolio */
+        .portfolio-section {
+            padding: 40px;
+            background-color: #f9f9f9;
+        }
+        .portfolio-item {
+            padding: 10px;
+        }
+        .portfolio-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .portfolio-img {
+            width: 100%;
+            height: 180px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+        .portfolio-desc {
+            padding: 15px;
+            font-size: 0.9rem;
+        }
+        
+
+        /* Responsive Fix */
+        @media (max-width: 768px) {
+            html, body { overflow-x: hidden; }
+            body { font-size: 14px; }
+            .container { max-width: 100%; margin: 0 auto; padding: 0 10px; }
+            .menu-section { padding: 12px 0; }
+            .navbar-brand { padding-right: 0; font-size: 1rem; }
+            .nav-item-1, .nav-item-2, .nav-item-3 { width: auto; min-width: 0; margin-right: 8px; font-size: 0.85rem; }
+            .menu-table, .navbar-collapse { width: 100%; padding: 0; }
+            .hero-section { padding: 25px 15px; }
+            .hero-content, .bio-grid, .portfolio-grid { display: block; width: 100%; }
+            .hero-content tr, .bio-grid tr, .portfolio-grid tr { display: block; }
+            .hero-content td, .bio-grid td, .portfolio-grid td { display: block; width: 100% !important; margin: 0 0 12px; }
+            .hero-text { padding-bottom: 20px; width: 100%; }
+            .profile-img { width: 230px; height: 230px; margin: 0 auto; display: block; }
+            .bio-box { margin-left: 30%; padding: 20px; width: 100%; }
+            .portfolio-section { padding: 20px 15px; }
+            .portfolio-item { padding: 5px 0; }
+            .portfolio-card { margin-bottom: 12px; }
+            .portfolio-img { height: 180px; }
+            .portfolio-desc { padding: 12px; }
+            .section-header { font-size: 1.5rem; margin-bottom: 20px; }
+            .bio-label { font-size: 0.95rem; }
+            .tombol-lihat-lebih-banyak {
+            margin-right: 30%;
+            margin-top: 20px;
+        }
+        }
+    </style>
+</head>
+<body>
+
+<table class="container">
+    <!-- SECTION 1: MENU -->
+    <tr>
+        <td class="menu-section">
+            <table class="menu-table">
+                 <nav class="navbar navbar-expand-lg bg-body-#333333">
+                <div class="container-fluid">
+                    <a class="navbar-brand " style="color:#3498db; font-weight: bold;" href="index.html">My Portfolio</a>
+                    <button class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item-1">
+                        <a  class="nav-link active text-white " style="font-weight: bold;" aria-current="page" href="#biodata">Biodata</a>
+                        </li>
+                        <li class="nav-item-2">
+                        <a class="nav-link text-white text-nowrap" style="font-weight: bold;" href="#produk">Produk</a>
+                        </li>
+                        <li class="nav-item-3">
+                        <a class="nav-link text-white" style="font-weight: bold;" aria-disabled="true" href="https://wa.me/+628999055133" target="_blank">Kontak</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                </nav>
+            </table>
+        </td>
+    </tr>
+
+    <!-- SECTION 2: JUDUL & GAMBAR -->
+    <tr>
+        <td class="hero-section">
+            <table width="100%" class="hero-content">
+                <tr>
+                    <td width="60%" class="hero-text">
+                        <h1 class="hero-title">Halo, Saya <br><span style="color: #3498db;">Muhammad Revolusi Islam II</span></h1>
+                        <p class="hero-subtitle">Seorang Pelajar yang Pintar, Jago & Ganteng yang bersemangat menciptakan solusi digital yang kreatif.</p>
+                    </td>
+                    <td width="40%" align="right">
+                        <img src="https://i.pinimg.com/736x/33/92/bf/3392bf4a71597db79da72e543832da2b.jpg" alt="Foto Profil Reis" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Muhammad+Revolusi+Islam+II&size=250'">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <!-- SECTION 3: BIODATA (6 BOX) -->
+    <tr>
+        <td class="biodata-section" id="biodata">
+            <h2 class="section-header">Informasi Biodata</h2>
+            <table width="100%" cellspacing="15" class="bio-grid">
+                <!-- Baris 1 -->
+                <tr>
+                    <td width="33.33%">
+                        <div class="bio-box">
+                            <span class="bio-icon">👤</span>
+                            <span class="bio-label">Nama Lengkap</span>
+                            <span>Muhammad Arya Fateh AL Baqqiy</span>
+                        </div>
+                    </td>
+                    <td width="33.33%">
+                        <div class="bio-box">
+                            <span class="bio-icon">📅</span>
+                            <span class="bio-label">Tempat, Tgl Lahir</span>
+                            <span>Cirebon, 28 Januari 2012</span>
+                        </div>
+                    </td>
+                    <td width="33.33%">
+                        <div class="bio-box">
+                            <span class="bio-icon">📍</span>
+                            <span class="bio-label">Alamat</span>
+                            <span>Sataqu Majalengka</span>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Baris 2 -->
+                <tr>
+                    <td>
+                        <div class="bio-box">
+                            <span class="bio-icon">📧</span>
+                            <span class="bio-label">Email</span>
+                            <span>aryafatehalbaqqiy120@gmail.com</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="bio-box">
+                            <span class="bio-icon">🎓</span>
+                            <span class="bio-label">Pendidikan</span>
+                            <span>SM Sataqu</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="bio-box">
+                            <span class="bio-icon">💻</span>
+                            <span class="bio-label">Keahlian</span>
+                            <span>HTML, CSS, JS, 3D Modeling</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <!-- SECTION 4: PORTOFOLIO -->
+    <tr>
+        <td class="portfolio-section" id="produk">
+            <h2 class="section-header">Produk</h2>
+            <table width="100%" class="portfolio-grid">
+                <tr>
+                    <td width="50%" class="portfolio-item">
+                        <div class="portfolio-card">
+                            <div class="portfolio-img">
+                                <img src="https://cdn.shopify.com/s/files/1/0601/6784/7989/files/MX10_06-1080x608_480x480.jpg?v=1707147357" alt="AeroFlex Mechanical Keyboard" class="img-fluid" style="height:180px; width:auto;">
+                            </div>
+                            <div class="portfolio-desc">
+                                <strong>AeroFlex Mechanical Keyboard</strong>
+                                <p>Keyboard gaming mechanical dengan RGB lighting, switch responsif, dan desain minimalis untuk gamer serta programmer.</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td width="50%" class="portfolio-item">
+                        <div class="portfolio-card">
+                            <div class="portfolio-img">
+                                <img src="https://s.alicdn.com/@sc04/kf/H190daa518ac540b8979fb3a64c0ee18aZ.jpg_300x300.jpg" alt="NovaSound Wireless Headset" class="img-fluid" style="height:180px; width:auto;">
+                            </div>
+                            <div class="portfolio-desc">
+                                <strong>NovaSound Wireless Headset</strong>
+                                <p>Headset bluetooth dengan kualitas suara bass kuat, noise reduction, dan baterai tahan lama.</p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%" class="portfolio-item">
+                        <div class="portfolio-card">
+                            <div class="portfolio-img">
+                                <img src="https://m.media-amazon.com/images/I/61Mk3YqYHpL._AC_SL1500_.jpg" alt="VoltX Gaming Mouse" class="img-fluid" style="height:180px; width:auto;">
+                            </div>
+                            <div class="portfolio-desc mb-5">
+                                <strong>VoltX Gaming Mouse</strong>
+                                <p>Mouse gaming RGB dengan DPI tinggi dan desain ergonomis untuk kenyamanan bermain.</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td width="50%" class="portfolio-item">
+                        <div class="portfolio-card">
+                            <div class="portfolio-img">
+                                <img src="https://images.samsung.com/is/image/samsung/p6pim/id/ua43u8000fkxxd/gallery/id-uhd-4k-tv-ua43u8000fkxxd-front-black-546546036?$1164_776_PNG$" alt="SkyVision Smart TV 43 Inch" class="img-fluid" style="height:180px; width:auto;">
+                            </div>
+                            <div class="portfolio-desc">
+                                <strong>SkyVision Smart TV 43 Inch</strong>
+                                <p>Smart TV Full HD dengan fitur streaming dan koneksi internet cepat.</p>
+                            </div>
+                        </div>
+                        <div class="tombol-lihat-lebih-banyak">
+                        <div class="d-flex justify-content-end mt-3">
+                        <a href="index2.html" 
+                        class="btn btn-primary" 
+                        style="text-decoration: none;">
+                        Lihat Lebih Banyak
+                        </a>
+                    </div>
+                    </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+    <!-- Footer -->
+    <tr>
+        <td style="padding: 20px; text-align: center; background-color: #2c3e50; color: white; font-size: 0.8rem;">
+            &copy; 2026 Muhammad Arya Fateh AL Baqqiy. Dibuat Bersama Tutor Dari Eduwork.
+        </td>
+    </tr>
+</table>
+
+<script>
+    let fruit = ["Apple", "Banana", "Cherry", "Date", "Elderberry", "Fig", "Grape"];
+    
+    fruit.push("orange");
+    fruit.pop();
+    let length = fruit.map(fruit => fruit.length);
+    let shortFruits = fruit.filter(fruit => fruit.length < 6);
+    console.log("This is my fruit: " + length);
+    console.log("Short fruits: " + shortFruits);
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
